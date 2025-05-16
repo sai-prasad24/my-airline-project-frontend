@@ -47,7 +47,7 @@
   
         
         <div class="flight-list" *ngIf="showFlights">
-          <div *ngIf="flights.length === 0" class="no-flights-message">
+          <div *ngIf="flights.length === 0" class="no-flights-message" style="color: black;">
             No flights are available for the selected date.
           </div>
           <table *ngIf="flights.length > 0">
@@ -65,13 +65,13 @@
             </thead>
             <tbody>
               <tr *ngFor="let flight of flights">
-                <td>{{ flight.airline }}</td>
-                <td>{{ flight.origin }}</td>
-                <td>{{ flight.destination }}</td>
-                <td>{{ flight.departureTime }}</td>
-                <td>{{ flight.arrivalTime }}</td>
-                <td>{{ flight.availableSeats }}</td>
-                <td>{{ flight.price | currency: 'INR' }}</td>
+                <td style="color: black;">{{ flight.airline }}</td>
+                <td style="color: black;">{{ flight.origin }}</td>
+                <td style="color: black;">{{ flight.destination }}</td>
+                <td style="color: black;">{{ flight.departureTime }}</td>
+                <td style="color: black;">{{ flight.arrivalTime }}</td>
+                <td style="color: black;">{{ flight.availableSeats }}</td>
+                <td style="color: black;">{{ flight.price | currency: 'INR' }}</td>
                 <td>
                     <button class="book-button" [routerLink]="['/bookflight', flight.flightId]">Book</button>
                 </td>
