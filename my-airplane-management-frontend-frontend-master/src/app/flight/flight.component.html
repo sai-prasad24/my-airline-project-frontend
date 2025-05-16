@@ -1,0 +1,69 @@
+<!-- <h2>Flight Management</h2>
+
+
+<form (ngSubmit)="onSubmit()">
+  <input type="text" [(ngModel)]="flight.airline" name="airline" placeholder="Airline" required>
+  <input type="text" [(ngModel)]="flight.origin" name="origin" placeholder="Origin" required>
+  <input type="text" [(ngModel)]="flight.destination" name="destination" placeholder="Destination" required>
+  <input type="datetime-local" [(ngModel)]="flight.departureTime" name="departureTime" required>
+  <input type="datetime-local" [(ngModel)]="flight.arrivalTime" name="arrivalTime" required>
+  <input type="number" [(ngModel)]="flight.availableSeats" name="availableSeats" placeholder="Available Seats" required>
+  <input type="number" [(ngModel)]="flight.price" name="price" placeholder="Price" required>
+  <button type="submit">{{isEditMode ? 'Update' : 'Add'}} Flight</button>
+</form>
+
+
+<ul>
+  <li *ngFor="let flight of flights">
+    {{ flight.airline }} - {{ flight.origin }} to {{ flight.destination }}
+    <button (click)="editFlight(flight)">Edit</button>
+    <button (click)="deleteFlight(flight.flightId)">Delete</button>
+  </li>
+</ul> -->
+<header>
+  <div class="header-bar">
+    <div class="logo">
+      Lanka Travels
+    </div>
+    <div class="auth-links">
+      <a routerLink="/logout" (click)="logOut()">Logout</a>
+      <a routerLink="/getbookingsforall">My Bookings</a>
+    </div>
+  </div>
+</header>
+<h2>Flight Management</h2>
+
+<!-- Link to add a flight -->
+<div class="add-flight-container">
+  <a href="javascript:void(0);" class="add-flight-link" (click)="toggleAddFlight()">+ Add New Flight</a>
+</div>
+
+<!-- Add or Update Flight Form -->
+<form *ngIf="showForm" (ngSubmit)="onSubmit()" class="flight-form">
+  <input type="text" [(ngModel)]="flight.airline" name="airline" placeholder="Airline" required>
+  <input type="text" [(ngModel)]="flight.origin" name="origin" placeholder="Origin" required>
+  <input type="text" [(ngModel)]="flight.destination" name="destination" placeholder="Destination" required>
+  <input type="datetime-local" [(ngModel)]="flight.departureTime" name="departureTime">
+  <input type="datetime-local" [(ngModel)]="flight.arrivalTime" name="arrivalTime" required>
+  <input type="number" [(ngModel)]="flight.availableSeats" name="availableSeats" placeholder="Available Seats" required>
+  <input type="number" [(ngModel)]="flight.price" name="price" placeholder="Price" required>
+  <button type="submit">{{isEditMode ? 'Update' : 'Add'}} Flight</button>
+  <button type="button" class="cancel-btn" (click)="cancelForm()">Cancel</button>
+</form>
+
+<!-- Flight List -->
+<div class="flight-list">
+  <h3>Available Flights</h3>
+  <ul>
+    <li *ngFor="let flight of flights">
+      <div class="flight-info">
+        <strong>{{ flight.airline }}</strong> - {{ flight.origin }} to {{ flight.destination }}
+        <span class="flight-details">Departure: {{ flight.departureTime }} | Arrival: {{ flight.arrivalTime }} | Seats:{{flight.availableSeats}} | Price: {{ flight.price |currency:"INR"}}</span>
+      </div>
+      <div class="flight-actions">
+        <button class="edit-btn" (click)="editFlight(flight)">Edit</button>
+        <button class="delete-btn" (click)="deleteFlight(flight.flightId)">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>

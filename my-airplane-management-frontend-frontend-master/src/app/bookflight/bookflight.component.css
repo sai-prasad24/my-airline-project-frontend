@@ -1,0 +1,242 @@
+
+/* .book-flight-container {
+  max-width: 900px; 
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.seat-selection-container {
+  display: flex;
+  justify-content: flex-end; 
+  padding-right: 20px;
+}
+
+.plane {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  background-color: #ddd;
+  border: 2px solid #999;
+  border-radius: 4px;
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+.row .seat:nth-child(4n+2) {
+  margin-right: 10px; 
+}
+
+.row .seat:nth-child(4n+3) {
+  margin-left: 10px; 
+}
+
+.seat.selected {
+  background-color: #6c63ff;
+  color: white;
+}
+
+.seat.disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.aisle {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px; 
+}
+
+.book-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.book-button:hover {
+  background-color: #45a049;
+}
+
+.booking-response {
+  margin-top: 20px;
+}
+
+.flight-form{
+  position: absolute;
+  top: 15rem;
+
+} */
+
+.book-flight-container {
+  max-width: 900px; 
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Add this CSS to apply a blur effect to disabled seats */
+.seat.disabled {
+  background-color: #e0e0e0; /* Light gray color for disabled seats */
+  cursor: not-allowed;
+  /* filter: blur(2px);  */
+  opacity: 0.3; /* Optional: Make the blur effect more visible */
+}
+
+
+
+.seat-selection-container {
+  display: flex;
+  justify-content: flex-end; 
+  padding-right: 20px; 
+}
+
+.plane {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  background-color: #ddd;
+  border: 2px solid #999;
+  border-radius: 4px;
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+.row .seat:nth-child(4n+2) {
+  margin-right: 10px;
+}
+
+.row .seat:nth-child(4n+3) {
+  margin-left: 10px; 
+}
+
+.seat.selected {
+  background-color: #6c63ff;
+  color: white;
+}
+
+.seat.disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.aisle {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px; 
+}
+
+.book-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.book-button:hover {
+  background-color: #45a049;
+}
+
+.booking-response {
+  margin-top: 20px;
+}
+
+.flight-form {
+  position: absolute;
+  top: 15rem;
+}
+
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: orange;
+}
+
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+header {
+  background-color: #004080;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.auth-links {
+  font-size: 1rem;
+}
+
+.auth-links a {
+  margin-left: 10px; 
+  text-decoration: none;
+  color: white;
+  padding: 8px 12px; 
+  background-color: #2196f3; 
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.auth-links a:hover {
+  background-color: #1976d2; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* =======cancel ticket css down */
+.cancel-section {
+  margin-top: 20px;
+}
+
+.cancel-button {
+  padding: 10px 20px;
+  background-color: #f44336; /* Red color for cancel */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: #d32f2f;
+}

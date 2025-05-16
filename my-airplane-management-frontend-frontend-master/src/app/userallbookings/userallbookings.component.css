@@ -1,0 +1,138 @@
+.user-bookings-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+  }
+  
+  .booking-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .booking-table th,
+  .booking-table td {
+    padding: 16px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 1em;
+    color: #444;
+  }
+  
+  .booking-table th {
+    background-color: #007bff; /* Bootstrap blue */
+    color: #ffffff;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+  }
+  
+  .booking-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .booking-table tr:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: #ffffff;
+    transform: translateY(-2px);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .booking-table tr:hover td {
+    color: #ffffff;
+  }
+  
+  .no-bookings-message {
+    text-align: center;
+    font-size: 1.2em;
+    color: #888;
+    margin-top: 20px;
+    font-style: italic;
+  }
+  
+  @media (max-width: 768px) {
+    .booking-table th,
+    .booking-table td {
+      padding: 12px 8px;
+      font-size: 0.9em;
+    }
+  
+    h2 {
+      font-size: 2em;
+    }
+  
+    .user-bookings-container {
+      padding: 20px;
+    }
+  }
+  
+
+  .navbar {
+    width: 85%;
+    margin: auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  header {
+    background-color: #004080;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: orange;
+  }
+
+  .auth-links {
+    font-size: 1rem;
+  }
+  
+  .auth-links a {
+    margin-left: 10px; /* Reduced margin */
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px; /* Reduced padding */
+    background-color: #2196f3; /* Blue color */
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .auth-links a:hover {
+    background-color: #1976d2; /* Darker blue color for hover effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  

@@ -1,0 +1,86 @@
+<div class="container-fluid">
+    <header>
+        <div class="header-bar">
+          <div class="logo">
+            Lanka Travels
+          </div>
+          <div>
+            <div class="auth-links">
+              <a routerLink="/logout" (click)="logOut()">Logout</a>
+              <a routerLink="/getbookingsforuser">My Bookings</a>
+              <a routerLink="/profile">Profile</a>
+            </div>
+          </div>
+        </div>
+      </header>
+    
+    <div class="content">
+      <div class="main-container">
+          <!-- <header class="header"> -->
+          <h1>Discover Your Perfect Flight</h1>
+         <!-- </header> -->
+  
+        <!-- Search Section -->
+        <section class="search-section">
+          <div class="search-options">
+            <div class="option">
+              <label for="origin">From</label>
+              <input type="text" id="origin" [(ngModel)]="search.origin" placeholder="Hyderabad">
+            </div>
+            
+            <div class="arrow-icon">
+              <img src="../../assets/arrow-left-right.svg" alt="Arrow">
+            </div>
+  
+            <div class="option">
+              <label for="destination">To</label>
+              <input type="text" id="destination" [(ngModel)]="search.destination" placeholder="Mumbai">
+            </div>
+  
+            <div class="option">
+              <label for="departure-date">Departure Date</label>
+              <input type="date" id="departure-date" [(ngModel)]="search.departureDate" [attr.min]="minDate">
+            </div>
+            <button class="search-button" (click)="searchFlights()">Search Flights</button>
+          </div>
+        </section>
+  
+        
+        <div class="flight-list" *ngIf="showFlights">
+          <div *ngIf="flights.length === 0" class="no-flights-message">
+            No flights are available for the selected date.
+          </div>
+          <table *ngIf="flights.length > 0">
+            <thead>
+              <tr>
+                <th>Airline</th>
+                <th>Origin</th>
+                <th>Destination</th>
+                <th>Departure Time</th>
+                <th>Arrival Time</th>
+                <th>Seats</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let flight of flights">
+                <td>{{ flight.airline }}</td>
+                <td>{{ flight.origin }}</td>
+                <td>{{ flight.destination }}</td>
+                <td>{{ flight.departureTime }}</td>
+                <td>{{ flight.arrivalTime }}</td>
+                <td>{{ flight.availableSeats }}</td>
+                <td>{{ flight.price | currency: 'INR' }}</td>
+                <td>
+                    <button class="book-button" [routerLink]="['/bookflight', flight.flightId]">Book</button>
+                </td>
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
